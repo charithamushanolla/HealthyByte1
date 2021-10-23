@@ -1,0 +1,136 @@
+<!---
+<div class="container" align="center">
+    <fieldset>
+        <legend>Register</legend>
+        <form #registerForm="ngForm" (ngSubmit)="registerSubmit(registerForm.value)" novalidate>
+    Enter client Id: <input type ="number" name="clientId" ngModel #clientId="ngModel" required><br/>
+    Enter client Name: <input type ="text" name="clientName" ngModel #clientName="ngModel" required><br/>
+    Enter Phone number: <input type ="text" name="phoneNo" ngModel #phoneNo="ngModel" required><br/>
+    Enter Email Address: <input type ="text" name="emailId" ngModel #emailId="ngModel" required><br/>
+    Enter loginId: <input type ="text" name="loginId" ngModel #loginId="ngModel" required><br/>
+    Enter password: <input type ="password" name="password" ngModel #password="ngModel" required><br/>
+    Enter Country: <select name="nationality" [(ngModel)]='client.nationality'><br/>
+        <option value={{country.alpha3Code}} *ngFor='let country of countries'>{{country.name}}</option>
+        </select><br/>
+   
+    <button class="btn btn-primary" >Register</button>
+    </form>
+    </fieldset>
+</div>-->
+<div class="modal fade" id="loginModel">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!--<div class="modal-header">
+              <span class="close" data-dismiss="modal">&times;</span>
+              <h4 class="modal-title">Update Form</h4>--
+          </div>-->
+          <div class="modal-body">
+              <form #loginForm="ngForm" ><!--(ngSubmit)="loginSubmit(loginForm.value)" novalidate>-->
+                  <div class ="loginbox">
+                  <h1>Login</h1>
+                  <p>Username</p>
+                  <input type="text" name="loginId" ngModel #loginId="ngModel" required class="form-control"  placeholder = "Enter Username">
+                  <p>Password</p>
+                  <input type="password" name="password" ngModel #password="ngModel" required class="form-control" placeholder="Enter Password">
+                  <input type ="submit" (click)="loginSubmit(loginForm.value)"[disabled]="!loginForm.valid" name ="" value="login" data-dismiss="modal">
+                  <a href="#">forgot your password?</a><br>
+                  <a class="nav-link" routerLink="/register" data-dismiss="modal">Don't have an account?</a>
+              </div>
+             <!----<div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)">Invalid error Occured</div>
+                          <div class="text-danger">
+                              <div *ngIf="loginId.errors?.required">Please Enter The LoginId</div>
+                              <div *ngIf="password.errors?.required">Please Enter The password</div>
+                          </div>-->
+          </form>
+          </div>
+         <!--- <div class="modal-footer">
+              <button class="btn btn-primary btn-sm" (click)="updateClient()" data-dismiss="modal">Update</button>
+          </div>-->
+      </div>
+  </div>
+</div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="regform"><h1>Registration Form</h1></div>
+    <div class="main">
+        <form #registerForm="ngForm" (ngSubmit)="registerSubmit(registerForm.value)" novalidate>
+        <div id="name">
+          <h2 class="name">Full Name</h2>
+          <input class="firstname" type="text" name="clientName" [(ngModel)]='client.clientName' required><br>
+          <!-- <div class="text-danger">
+          <div *ngIf="registerForm.touched && client.clientName.errors?.required">please enter your name</div>
+          </div> -->
+          <!-- <label class="firstlabel">Full name</label> -->
+         <!--- <input class="lastname" type="text" name="last_name">
+          <label class="lastlabel">last name</label>-->
+        </div>
+
+        <h2 class="name">Date of Birth</h2>
+        <input class="dob" type="date" name="dob" [(ngModel)]='client.dob' required>
+        <!-- <div class="text-danger">
+        <div *ngIf="registerForm.touched && client.dob.errors?.required">please enter your Date Of Birth</div>
+        </div> -->
+
+        <h2 class="name"> Phone</h2>
+       <!---- <input class="Code" type="text" name="area_code">
+        <label class="area_code">Area Code</label>-->
+        <input class="number" type="text" name="phoneNo" minlength="10" maxlength="10" [(ngModel)]='client.phoneNo' required>
+        <!-- <div class="text-danger">
+        <div *ngIf="registerForm.touched && client.phoneNo.errors?.required">please enter your mobile number</div>
+        </div> -->
+        <!-- <label class="phone_number">Phone Number</label> -->
+
+        <h2 class="name">Email</h2>
+        <input class="email" type="text" name="emailId" [(ngModel)]='client.emailId' #cpass1="ngModel"  pattern="[^ @]*@[^ @]*" required >
+        <label for="email"></label>
+                <div class="text-danger">
+                  <!-- <div *ngIf="registerForm.touched && client.emailId.errors?.required">please enter your emailId</div> -->
+                    <div *ngIf="registerForm.touched && cpass1.errors?.pattern">Enter the valid mailId</div>
+                </div>
+
+        <h2 class="name"> Username</h2>
+        <input class="option" type="text" name="loginId" [(ngModel)]='client.loginId' required>
+         <div class="text-danger" >
+          
+          <div *ngIf="registerForm.touched && clients.includes(client.loginId)">already exists</div>
+      </div> 
+        <h2 class="name"> Password</h2>
+        <input class="option" type="password" name="password" [(ngModel)]='client.password' required>
+         <div class="text-danger">
+        <div *ngIf="registerForm.touched && client.password.errors?.required">please enter your password</div>
+        </div>
+        <h2 class="name"> Confirm Password</h2>
+        <input class="option" type="password" name="confirmpassword" [(ngModel)]='client.confirmpassword' pattern="{{client.password}}" #cpass="ngModel" required>
+        <label for="Confirm Password"></label>
+                <div class="text-danger">
+                    <div *ngIf="registerForm.touched && cpass.errors?.pattern">Password and Confirm password doesn't
+                        match</div>
+                </div>
+
+        <!--<h2 id="student" style="color: white;">Are you beginner ?</h2> -->
+
+        <!--<label class="radio">
+          <input class="radio-one" type="radio" checked="checked" name="">
+          <span class="checkmark"></span>
+          Yes
+        </label>
+        <label class="radio">
+          <input class="radio-two" type="radio" name="">
+          <span class="checkmark"></span>
+          No
+        </label>-->
+
+        <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="showLoginPopup(loginForm)">Register</button>
+
+
+      </form>
+    </div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,148 @@
+
+
+<div *ngIf=dietician></div>
+<div class="container">
+    <div class="modal fade" id="dieticianModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Name: <input type="text" name="dieticianName" [(ngModel)]="editObject.dieticianName"
+                            class="form-control"><br />
+                        Enter phone Number: <input type="number" name="phoneNo" [(ngModel)]="editObject.phoneNo"
+                            class="form-control"><br />
+                        Enter Email Id: <input type="text" name="emailId" [(ngModel)]="editObject.emailId"
+                            class="form-control"><br />
+                        Enter loginId: <input type="text" name="loginId" [(ngModel)]="editObject.loginId"
+                            class="form-control"><br />
+                        Enter Nationality: <input type="text" name="nationality" [(ngModel)]="editObject.nationality"
+                            class="form-control"><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateDietician()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--<body>
+    <div class = "card">
+        <h1>MY PROFILE</h1><br>
+    <div>
+
+    </div>    
+
+    <table style="width: 100%;">
+    <tr>
+        <th>Name</th>
+        <td>{{dietician.dieticianName}}</td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td>{{dietician.phoneNo}}</td>
+      </tr>
+      <tr>
+        <th>Email Id</th>
+        <td>{{dietician.emailId}}</td>
+      </tr>
+      <tr>
+        <th>loginId</th>
+        <td>{{dietician.loginId}}</td>
+      </tr>
+      <tr>
+        <th>Nationality</th>
+        <td>{{dietician.nationality}}</td>
+      </tr>
+      <br><br>
+    </table>
+      <p><button (click)="showEditPopup(dietician)">Edit Profile</button></p>
+      <tr>
+     <th>Edit Profile</th>
+        <td><button (click)="showEditPopup(client)" class="glyphicon glyphicon-pencil"></button></td>
+      </tr>
+    
+    </div>
+</body>-->
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <title>Sidebar Dashboard</title>
+        <link rel="stylesheet" href="dieticianprofile.component.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    </head>
+    <body>
+        
+        <input type="checkbox" id="check">
+        <header>
+            <!-- <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label> -->
+            <div class="left_area">
+              <img [src]="logo">
+            </div>
+            <div class="right_area">
+                <a class="nav-link" routerLink="/" class="logout_btn">Logout</a>
+            </div>
+        </header>
+        <div class="sidebar">
+          <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+            <a class="nav-link" routerLink="/dieticianprofile"><i class="fas fa-desktop"></i><span>My Profile</span></a>
+            <!-- <a class="nav-link" routerLink="/imageupload"><i class="fas fa-upload"></i><span>Upload Diets</span></a>
+            <a class="nav-link" routerLink="/getdiets"><i class="fas fa-table"></i><span>All Diets</span></a> -->
+            <a class="nav-link" routerLink="/showallclients"><i class="fas fa-user"></i><span>All Clients</span></a>
+            <a class="nav-link" routerLink="/showallhealthforms"><i class="fas fa-th"></i><span>Health Forms</span></a>
+            <a class="nav-link" routerLink="/dietdiscussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion Forum</span></a>
+            <!-- <a class="nav-link" routerLink="/reviews"><i class="fa fa-star" aria-hidden="true"></i><span>Reviews</span></a> -->
+        </div>
+
+        <div class="content tbl">
+            <div class = "card">
+                <h1 style="text-align: center;">MY PROFILE</h1><br>
+            <div>
+        
+            </div>    
+        
+            <table style="width: 100%;">
+            <tr>
+                <th>Name</th>
+                <td>{{dietician.dieticianName}}</td>
+              </tr>
+              <tr>
+                <th>Phone Number</th>
+                <td>{{dietician.phoneNo}}</td>
+              </tr>
+              <tr>
+                <th>Email Id</th>
+                <td>{{dietician.emailId}}</td>
+              </tr>
+              <tr>
+                <th>loginId</th>
+                <td>{{dietician.loginId}}</td>
+              </tr>
+              <tr>
+                <th>Nationality</th>
+                <td>{{dietician.nationality}}</td>
+              </tr>
+              <br><br>
+            </table>
+              <p><button (click)="showEditPopup(dietician)">Edit Profile</button></p>
+              <!--<tr>
+             <th>Edit Profile</th>
+                <td><button (click)="showEditPopup(client)" class="glyphicon glyphicon-pencil"></button></td>
+              </tr>-->
+            
+            </div>
+        </div>
+        
+    </body>
+</html>

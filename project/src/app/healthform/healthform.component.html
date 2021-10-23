@@ -1,0 +1,101 @@
+<!--<p>healthform works!</p>
+<div class="container" align="center">
+    <fieldset>
+        <legend>Register</legend>
+        <form #healthForm="ngForm" (ngSubmit)="healthFormSubmit(healthForm.value)" novalidate>
+    Enter your age: <input type ="number" name="age" ngModel #age="ngModel" required><br/>
+    Enter your weight: <input type ="number" name="weight" ngModel #weight="ngModel" required><br/>
+    Enter your height: <input type ="number" name="height" ngModel #height="ngModel" required><br/>
+    Enter your Gender: <input type ="text" name="gender" ngModel #gender="ngModel" required><br/>
+    Enter your Blood Group: <input type ="text" name="bloodGrp" ngModel #bloodGrp="ngModel" required><br/>
+    Enter Medical Condition: <input type ="text" name="medicalCondition" ngModel #medicalCondition="ngModel" required><br/>
+    Enter your Daily Activity <input type ="text" name="dailyActivity" ngModel #dailyActivity="ngModel" required><br/>
+
+   
+    <button class="btn btn-primary" >submit</button>
+    </form>
+    </fieldset>
+</div> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="regform"><h1>Health Form</h1></div>
+    <div class="main">
+        <form #healthform="ngForm" (ngSubmit)="healthFormSubmit(healthform.value)" novalidate>
+       
+
+        <h2 class="name"></h2>
+
+        <h2 class="name">Age</h2>
+        <input class="age" type ="number" name="age" [(ngModel)]='healthForm.age'>
+        <h2 class="name">Weight(in kgs)</h2>
+        <input class="age" type ="number" name="weight" [(ngModel)]='healthForm.weight'>
+        <h2 class="name">Height(in mtr)</h2>
+        <input class="age" type ="number" name="height" [(ngModel)]='healthForm.height'>
+        <h2 class="name">Blood Group</h2>
+        <!--<input class="age" type ="text" name="bloodGrp" ngModel #bloodGrp="ngModel" required>-->
+        <select class="age" name="bloodGrp"[(ngModel)]='healthForm.bloodGrp'>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+          <h2 class="name">Gender</h2>
+          <select class="charitha" name="gender" [(ngModel)]='healthForm.gender'>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        <h2 class="name">Medical Conditions</h2>
+        <!--<input class="charitha" type="text" name="medicalCondition" ngModel #medicalCondition="ngModel" required>-->
+        <select class="charitha" name="medicalCondition" [(ngModel)]='healthForm.medicalCondition'>
+            <option value="Diabetis">Diabetis</option>
+            <option value="Cancer">Cancer</option>
+            <option value="Cynus">Cynus</option>
+            <option value="Asthama">Asthama</option>
+            <option value="None">None</option>
+          </select>
+        <h2 class="name">Physical Activity</h2>
+        <!--<input class="charitha" type="text" name="dailyActivity" ngModel #dailyActivity="ngModel" required>-->
+        <select class="charitha" name="dailyActivity" [(ngModel)]='healthForm.dailyActivity'>
+            <option value="Yoga">Yoga</option>
+            <option value="Walking or Jogging">Walking or Jogging</option>
+            <option value="Gim">Gym</option>
+            <option value="None">None</option>
+          </select>
+          <!-- <h2 class="name">Gender</h2>
+          <select class="charitha" name="gender" [(ngModel)]='healthForm.gender'>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select> -->
+        <!-- <h2 class="name">Gender</h2>
+        <label class = "radio">
+        <input style="margin:25px"type="radio" id="male" name="gender" value="male" [(ngModel)]='healthForm.gender'>
+        <label for="male">Male</label>
+        <input style="margin:25px" type="radio" id="female" name="gender" value="female"[(ngModel)]='healthForm.gender'>
+        <label for="female">Female</label>
+        <input style="margin:25px" type="radio" id="other" name="gender" value="other"[(ngModel)]='healthForm.gender'>
+        <label for="other">Other</label>
+        </label><br> -->
+        <!--<div  name="client" [(ngModel)]='curClient.clientId'></div>-->
+
+
+        <button class="btn btn-primary" >Submit</button>
+
+      </form>
+    </div>
+
+
+
+
+  </body>
+</html>
+

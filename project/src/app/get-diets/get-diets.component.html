@@ -1,0 +1,83 @@
+<!--<h1 style="text-align: center;">ALL DIETS</h1>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let dietPlan of dietPlans">
+            <div class="card">
+                <img class="card-img-top" src="http://localhost:2021/RESTAPI2018/image/{{dietPlan.image}}" height="250px"/>
+                <div class="card-body" height="250px">
+                    <h3 class="card-title">DIET PLAN</h3>
+                    <h5>Morning Diet</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.morningDiet}}</p>
+                    <h5>Afternoon Diet</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.afternoonDiet}}</p>
+                    <h5>Evening Diet</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.eveningDiet}}</p>
+                    <h5>Physical Activity</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.phyActivities}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sidebar Dashboard</title>
+        <link rel="stylesheet" href="get-diets.component.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    </head>
+    <body>
+        
+        <input type="checkbox" id="check">
+        <header>
+            <!-- <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label> -->
+            <div class="left_area">
+                <img [src]="logo">
+            </div>
+            <div class="right_area">
+                <a class="nav-link" routerLink="/" class="logout_btn">Logout</a>
+            </div>
+        </header>
+        <div class="sidebar">
+            <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label>
+            <a class="nav-link" routerLink="/dieticianprofile"><i class="fas fa-desktop"></i><span>My Profile</span></a>
+            <a class="nav-link" routerLink="/imageupload"><i class="fas fa-upload"></i><span>Upload Diets</span></a>
+            <a class="nav-link" routerLink="/getdiets"><i class="fas fa-table"></i><span>All Diets</span></a>
+            <a class="nav-link" routerLink="/showallclients"><i class="fas fa-user"></i><span>All Clients</span></a>
+            <a class="nav-link" routerLink="/showallhealthforms"><i class="fas fa-th"></i><span>Health Forms</span></a>
+            <a class="nav-link" routerLink="/dietdiscussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion Forum</span></a>
+            <a class="nav-link" routerLink="/reviews"><i class="fa fa-star" aria-hidden="true"></i><span>Reviews</span></a>
+        </div>
+
+        <div class="content tbl">
+            <h1 style="text-align: center;">ALL DIETS</h1>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let dietPlan of dietPlans">
+                        <div class="card" style="height: fit-content;width: 200px;">
+                            <img class="card-img-top" src="http://localhost:2021/RESTAPI2018/image/{{dietPlan.image}}" height="150px"/>
+                            <div class="card-body" height="50px" width="300px">
+                                <h3 class="card-title">DIET PLAN</h3>
+                                <h5>Morning Diet</h5>
+                                <p class="card-text" style="height: auto">{{dietPlan.morningDiet}}</p>
+                                <h5>Afternoon Diet</h5>
+                                <p class="card-text" style="height: auto">{{dietPlan.afternoonDiet}}</p>
+                                <h5>Evening Diet</h5>
+                                <p class="card-text" style="height: auto">{{dietPlan.eveningDiet}}</p>
+                                <h5>Physical Activity</h5>
+                                <p class="card-text" style="height: auto">{{dietPlan.phyActivities}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+    </body>
+</html>

@@ -1,0 +1,135 @@
+<!--<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<table class="table table-bordered table-striped table-hover table-sm text-center">
+    <thead>
+        <tr class="bg-info text-white">
+            <th>ID</th>
+            <th>AGE</th>
+            <th>WEIGHT</th>
+            <th>HEIGHT</th>
+            <th>BMI</th>
+            <th>BLOOD GROUP</th>
+            <th>GENDER</th>
+            <th>MEDICAL CONDITIONS</th>
+            <th>PHYSICAL ACTIVITY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let healthForm of healthForms'>
+            <td>{{healthForm.healthFormId}}</td>
+            <td>{{healthForm.age}}</td>
+            <td>{{healthForm.weight}}</td>
+            <td>{{healthForm.height}}</td>
+            <td>{{healthForm.bmi |bmi: healthForm.weight:healthForm.height}}</td>
+            <td>{{healthForm.bloodGrp}}</td>
+            <td>{{healthForm.gender}}</td>
+            <td>{{healthForm.medicalCondition}}</td>
+            <td>{{healthForm.dailyActivity}}</td>
+</tr>
+</tbody>
+</table>-->
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sidebar Dashboard</title>
+        <link rel="stylesheet" href="showallhealthforms.component.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    </head>
+    <div *ngIf=healthForm></div>
+    <div class="container">
+        <div class="modal fade" id="healthFormModel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"style="text-center">UPLOAD DIET</h4>
+                        <span class="close" data-dismiss="modal">&times;</span>
+                        <!-- <h4 class="modal-title">Upload Diet</h4> -->
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group">
+                            Enter MorningDiet: <input type="text" name="morningDiet" [(ngModel)]="editObject.morningDiet"
+                                class="form-control"><br />
+                            Enter AfternoonDiet: <input type="text" name="afternoonDiet" [(ngModel)]="editObject.afternoonDiet"
+                                class="form-control"><br />
+                            Enter EveningDiet: <input type="text" name="eveningDiet" [(ngModel)]="editObject.eveningDiet"
+                                class="form-control"><br />
+                            Enter phyActivities: <input type="text" name="phyActivities" [(ngModel)]="editObject.phyActivities"
+                                class="form-control"><br />
+                           
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary btn-sm" (click)="updateHealthForm()" data-dismiss="modal">Upload </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <body>
+        
+        <input type="checkbox" id="check">
+        <header>
+            <!-- <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label> -->
+            <div class="left_area">
+                <img [src]="logo">
+            </div>
+            <div class="right_area">
+                <a class="nav-link" routerLink="/" class="logout_btn">Logout</a>
+            </div>
+        </header>
+        <div class="sidebar">
+            <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label>
+            <a class="nav-link" routerLink="/dieticianprofile"><i class="fas fa-desktop"></i><span>My Profile</span></a>
+            <!-- <a class="nav-link" routerLink="/imageupload"><i class="fas fa-upload"></i><span>Upload Diets</span></a>
+            <a class="nav-link" routerLink="/getdiets"><i class="fas fa-table"></i><span>All Diets</span></a> -->
+            <a class="nav-link" routerLink="/showallclients"><i class="fas fa-user"></i><span>All Clients</span></a>
+            <a class="nav-link" routerLink="/showallhealthforms"><i class="fas fa-th"></i><span>Health Forms</span></a>
+            <a class="nav-link" routerLink="/dietdiscussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion Forum</span></a>
+            <!-- <a class="nav-link" routerLink="/reviews"><i class="fa fa-star" aria-hidden="true"></i><span>Reviews</span></a> -->
+        </div>
+
+        <div class="content tbl">
+            <h1>ALL HEATH FORMS</h1>
+            <table class="table table-bordered  table-hover table-sm text-center">
+                <thead>
+                    <tr class="bg-info text-white">
+                        <th>ID</th>
+                        <th>AGE</th>
+                        <th>WEIGHT</th>
+                        <th>HEIGHT</th>
+                        <th>BMI</th>
+                        <th>BLOOD GROUP</th>
+                        <th>GENDER</th>
+                        <th>MEDICAL CONDITIONS</th>
+                        <th>PHYSICAL ACTIVITY</th>
+                        <th>UPLOAD DIET</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let healthForm of healthForms'>
+                        <td>{{healthForm.healthFormId}}</td>
+                        <td>{{healthForm.age}}</td>
+                        <td>{{healthForm.weight}}</td>
+                        <td>{{healthForm.height}}</td>
+                        <td>{{healthForm.bmi |bmi: healthForm.weight:healthForm.height}}</td>
+                        <td>{{healthForm.bloodGrp}}</td>
+                        <td>{{healthForm.gender}}</td>
+                        <td>{{healthForm.medicalCondition}}</td>
+                        <td>{{healthForm.dailyActivity}}</td>
+                        <td><button (click)="showDietPopup(healthForm)" class="fas fa-upload"></button></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+        
+    </body>
+</html>

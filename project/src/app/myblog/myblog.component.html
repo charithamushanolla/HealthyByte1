@@ -1,0 +1,73 @@
+
+<head>
+    <meta charset="ISO-8859-I">
+    <title>Html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <!-- <div id="header">
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Healthy<span>Byte</span></h3>
+        </div>
+        <div class="right_area">
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+    </div> -->
+    <div id="navigation">
+        <div class="left_area">
+            <img [src]="logo">
+        </div>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <!-- <div class="left_area">
+            <img [src]="logo">
+        </div> -->
+        <a class="nav-link" routerLink="/main2"><i class="fas fa-home"></i><span>Home<br /></span></a>
+        <a class="nav-link" routerLink="/yoga"><i class="fa fa-heartbeat"></i><span>Yoga<br /></span></a>
+        <a class="nav-link" routerLink="/yourdiet"><i class="fa fa-cutlery"></i><span>Diet<br /></span></a>
+        <a class="nav-link" routerLink="/fitness"><i class="fas fa-running"></i><span>Fitness</span></a>
+        <a class="nav-link" routerLink="/blog"><i class="fab fa-blogger-b"></i><span>Blog</span></a>
+        <a class="nav-link" routerLink="/discussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion</span></a>
+    </div>
+    <div id="section">
+        <div class="blog">
+            <h1>HEY {{client.clientName}}</h1>
+            <!-- <h1>WELCOME TO OUR BLOG!!!!</h1> -->
+            <h3 style="text-align: center;">Share your Knowledge by writing an article</h3>
+        </div> 
+        <div class="container">
+            <form class="form-group" #blogform="ngForm" (ngSubmit)="submitBlog(blogform.value)" novalidate>
+                <!-- <input type="text" style="width: 250px;height: 200px;margin-left: 10px;margin-right: 10px;" name="article"  ngModel #article= 'ngModel'> -->
+                <div class="row">
+                    <div class="col-25">
+                      <label for="fname"></label>
+                    </div>
+                    <div class="col-751">
+                      <textarea rows="10" cols="90" id="fname" name="article"  ngModel #article= 'ngModel'>Write your article here.....</textarea>
+                    </div>
+                  </div>
+                <div class="row">
+                    <div class="col-25">
+                      <label for="submit"></label>
+                      <input type="file" id="myFile" name="filename" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+                      
+                    </div>
+                    <div class="col-75">
+                      <textarea id="subject" name="subject" placeholder="upload image..." style="height:200px"></textarea>
+                    </div>
+                  </div>
+                <button class="btn btn-primary btn-sm">Submit</button>
+            </form>
+            
+        </div>
+        
+          
+    </div>
+</body>

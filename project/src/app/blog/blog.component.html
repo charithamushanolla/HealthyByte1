@@ -1,0 +1,118 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<!-- <div *ngIf=client></div> -->
+<div class="container">
+    <div class="modal fade" id="blogModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Share Your Experience</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group" #blogform="ngForm">
+                        <input type="text" style="width: 250px;height: 200px;margin-left: 10px;margin-right: 10px;" name="article" [(ngModel)]="blogForm.article">
+                        <button class="btn btn-primary btn-sm" (click)="submitBlog(blogform.value)" data-dismiss="modal">Submit</button>
+                    </form>
+                </div><br/>
+                <!-- <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateClient()" data-dismiss="modal">Submit</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <body>
+
+     <div class="blog">
+        <h1>HEY {{client.clientName}}!!!!</h1>
+        <h1>WELCOME TO OUR BLOG!!!!</h1>
+        <h1>SHARE YOUR EXPERIENCE!!!</h1>
+    </div> 
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let blog of blogs">
+                <div class="card">
+                    <div class="card-body" height="250px">
+                        <h3 class="card-title"></h3>
+                        <h5>Client {{blog.client.clientId}}'s  Experience  </h5>
+                        <p class="card-text" style="width: auto; height: 50px;">{{blog.article}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p><button (click)="showBlogPopup()" style="color:black">ADD BLOG</button></p>
+      
+</body> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-I">
+    <title>Html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <div id="header">
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <!-- <h3>Healthy<span>Byte</span></h3> -->
+        </div>
+        <div class="right_area">
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+    </div>
+    <div id="navigation">
+        <div class="left_area">
+            <!-- <h3>Healthy<span>Byte</span></h3> -->
+            <img [src]="logo">
+        </div>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <!-- <div class="left_area">
+            <img [src]="logo">
+        </div> -->
+        <a class="nav-link" routerLink="/main2"><i class="fas fa-home"></i><span>Home<br /></span></a>
+        <a class="nav-link" routerLink="/yoga"><i class="fa fa-heartbeat"></i><span>Yoga<br /></span></a>
+        <!-- <a class="nav-link" routerLink="/yourdiet"><i class="fa fa-cutlery"></i><span>Diet<br /></span></a> -->
+        <a class="nav-link" routerLink="/fitness"><i class="fas fa-running"></i><span>Fitness</span></a>
+        <a class="nav-link" routerLink="/blog"><i class="fab fa-blogger-b"></i><span>Blog</span></a>
+        <a class="nav-link" routerLink="/discussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion</span></a>
+    </div>
+    <div id="section">
+        <div class="blog">
+            <h1>HEY {{curClient.clientName}}</h1>
+            <h1>WELCOME TO OUR BLOG</h1>
+            <!-- <h1>SHARE YOUR EXPERIENCE!!!</h1> -->
+        </div> 
+        <p><button (click)="myblog()" style="color:black">ADD BLOG</button></p>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-xl-6 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let blog of blogs" style="margin-top: 60px;">
+                    <div class="card" style="width: 500px;height: 500px;">
+                        <img class="card-img-top" src="http://localhost:2021/RESTAPI2018/image/{{blog.image}}" height="220px"/>
+                        <div class="card-body" height="50px" width="150px">
+                            <!-- <h3 class="card-title"></h3> -->
+                            <!-- <h5>My Experience</h5> -->
+                            <p class="card-text" style="height: auto">{{blog.article}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <p><button (click)="myblog()" style="color:black">ADD BLOG</button></p> -->
+          
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+
+<!--<div *ngIf="getbmi(healthForm.bmi); else elseblock">
+    <div>
+            <button (click)="getdiet(1)">GET MY DIET</button>
+    </div>
+</div>
+<div #elseblock>
+    <button (click)="getdiet(2)">GET MY DIET</button>
+</div>-->
+<!--<div class="container" *ngIf=dietPlan>
+    <div class="row text-center">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+            <div class="card">
+                <img class="card-img-top" src="http://localhost:2021/RESTAPI2018/image/{{dietPlan.image}}" height="250px"/>
+                <div class="card-body" height="250px">
+                    <h3 class="card-title">DIET PLAN</h3>
+                    <h5>Morning Diet</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.morningDiet}}</p>
+                    <h5>Afternoon Diet</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.afternoonDiet}}</p>
+                    <h5>Evening Diet</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.eveningDiet}}</p>
+                    <h5>Physical Activity</h5>
+                    <p class="card-text" style="height: 50px">{{dietPlan.phyActivities}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>Hey {{client.clientName}}</h2>
+    <h2>Here is your Diet Plan</h2>
+    <button class="btn1" (click)="healthformdetailsredirect()">My Health Form</button>
+<div class="container">
+<div class="row">
+    <div class="coloumn0" style="background-color: white;">
+        <img class="card-img-top" src="http://localhost:2021/RESTAPI2018/image/{{dietPlan.image}}" height="300px"/>
+    </div><br>
+</div>
+<div class="row">
+  <div class="column1" style="background-color:lavender;">
+    <h2>Morning Diet</h2>
+    <p>{{dietPlan.morningDiet}}</p>
+  </div>
+
+  <div class="column2" style="background-color:lavender;">
+    <h2>Afternoon Diet</h2>
+    <p>{{dietPlan.afternoonDiet}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="column3" style="background-color:lavender;">
+    <h2>Evening Diet</h2>
+    <p>{{dietPlan.eveningDiet}}</p>
+  </div>
+  <div class="column4" style="background-color:lavender;">
+    <h2>Daily Activity</h2>
+    <p>{{dietPlan.phyActivities}}</p>
+  </div>
+</div>
+</div>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-I">
+    <title>Html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <div id="header">
+        <div class="left_area">
+            <img [src]="logo">
+        </div>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <!-- <div class="left_area">
+            <img [src]="logo">
+        </div> -->
+        <div class="right_area">
+            <!-- <a class="nav-link" routerLink="/main" class="logout_btn">Logout</a> -->
+        </div>
+    </div>
+    <div id="navigation">
+         <div class="left_area">
+            <img [src]="logo">
+        </div>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+         <!-- <div class="left_area">
+            <img [src]="logo">
+        </div>  -->
+        <a class="nav-link" routerLink="/main2"><i class="fas fa-home"></i><span>Home<br /></span></a>
+        <a class="nav-link" routerLink="/yoga"><i class="fa fa-heartbeat"></i><span>Yoga<br /></span></a>
+        <a class="nav-link" routerLink="/yourdiet"><i class="fa fa-cutlery"></i><span>Diet<br /></span></a>
+        <a class="nav-link" routerLink="/fitness"><i class="fas fa-running"></i><span>Fitness</span></a>
+        <a class="nav-link" routerLink="/blog"><i class="fab fa-blogger-b"></i><span>Blog</span></a>
+        <a class="nav-link" routerLink="/discussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion</span></a>
+    </div>
+    <div id="section">
+        <h1>YOUR DIET IS READY {{client.clientName}}</h1>
+        <button class="btn1" (click)="healthformdetailsredirect()">My Health Form</button>
+        <div class="container">
+          <div class="row">
+            <div class="coloumn0" style="background-color: white;">
+                <img class="card-img-top" [src]="url" height="300px"/>
+            </div><br>
+        </div>
+            <div class="row">
+
+                <div class="column1" style="background-color:lavender;">
+                    <h3>Morning Diet</h3>
+                    <p>{{dietPlan.morningDiet}}</p>
+                </div>
+
+                <div class="column2" style="background-color:lavender;">
+                    <h3>Afternoon Diet</h3>
+                    <p>{{dietPlan.afternoonDiet}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column3" style="background-color:lavender;">
+                    <h3>Evening Diet</h3>
+                    <p>{{dietPlan.eveningDiet}}</p>
+                </div>
+                <div class="column4" style="background-color:lavender;">
+                    <h3>Daily Activity</h3>
+                    <p>{{dietPlan.phyActivities}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+

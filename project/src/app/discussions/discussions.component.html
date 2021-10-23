@@ -1,0 +1,223 @@
+<!-- <mat-tab-group>
+    <mat-tab label="All Discussions"> 
+        <div class="row text-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let discussion of discussions">
+                <div class="card">
+                    <div class="card-body" height="50px" width="150px">
+                        <h3 class="card-title">client {{client.clientId}}'s question</h3>
+                        <h5>Que:</h5>
+                        <p class="card-text" style="height: auto">{{discussion.question}}</p>
+                        <h5>Ans:</h5>
+                        <p class="card-text" style="height: auto">{{discussion.answer}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="MY Discussions"> 
+        <h2>Hey {{client.clientId}} :)</h2>
+        <h2>Post Your Questions Here!!!</h2>
+        <div ngIf="client">
+            <form class="form-group" #discussionform="ngForm" (ngSubmit)="submitQuestion(discussionform.value)" novalidate>
+                <input type="text" name=question [(ngModel)]="discussionForm.question">
+                <button class="btn btn-primary">Post</button>
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group> -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        /* Set height of body and the document to 100% */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Style tab links */
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+            color:black;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+
+        #Home {
+            background-color: red;
+        }
+
+        #News {
+            background-color: green;
+        }
+
+        #Contact {
+            background-color: blue;
+        }
+
+        #About {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="tablink" onclick="openPage('Home', this, 'white')">All Discussions</button>
+    <button class="tablink" onclick="openPage('News', this, 'white')" id="defaultOpen">My Discussions</button>
+
+    <div id="Home" class="tabcontent">
+        <div class="row text-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let discussion of discussions">
+                <div class="card">
+                    <div class="card-body" height="50px" width="150px">
+                        <h3 class="card-title">client {{client.clientId}}'s question</h3>
+                        <h5>Que:</h5>
+                        <p class="card-text" style="height: auto">{{discussion.question}}</p>
+                        <h5>Ans:</h5>
+                        <p class="card-text" style="height: auto">{{discussion.answer}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="News" class="tabcontent">
+        <h1>Hey</h1>
+        <div *ngIf=client>
+        <h2>Hey {{client.clientId}} :)</h2>
+        <h2>Post Your Questions Here!!!</h2>
+        
+            <form class="form-group" #discussionform="ngForm" (ngSubmit)="submitQuestion(discussionform.value)" novalidate>
+                <input type="text" name=question [(ngModel)]="discussionForm.question">
+                <button class="btn btn-primary">Post</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-I">
+    <title>Html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <div id="header">
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Healthy<span>Byte</span></h3>
+        </div>
+        <div class="right_area">
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+    </div>
+    <div id="navigation">
+        <div class="left_area">
+            <img [src]="logo">
+        </div>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <!-- <div class="left_area">
+            <img [src]="logo">
+        </div> -->
+        <a class="nav-link" routerLink="/main2"><i class="fas fa-home"></i><span>Home<br /></span></a>
+        <a class="nav-link" routerLink="/yoga"><i class="fa fa-heartbeat"></i><span>Yoga<br /></span></a>
+        <!-- <a class="nav-link" routerLink="/yourdiet"><i class="fa fa-cutlery"></i><span>Diet<br /></span></a> -->
+        <a class="nav-link" routerLink="/fitness"><i class="fas fa-running"></i><span>Fitness</span></a>
+        <a class="nav-link" routerLink="/blog"><i class="fab fa-blogger-b"></i><span>Blog</span></a>
+        <a class="nav-link" routerLink="/discussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion</span></a>
+    </div>
+    <div id="section">
+        <div class="blog">
+            <h1>HEY {{client.clientName}}</h1>
+            <h1>WELCOME TO DISCUSSION FORUM</h1>
+            <p style="top: 100px;"><button (click)="mydiscussion()" style="color:black">Ask Question</button></p>
+            <p style="top: 100px;"><button (click)="myQuestions()" style="color:black">My Questions</button></p>
+            <!-- <h1>SHARE YOUR EXPERIENCE!!!</h1> -->
+        </div> <br>
+        <div class="container" *ngFor="let discussion of discussions">
+            <!-- <div class="row text-center">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" *ngFor="let discussion of discussions"> -->
+                    <!-- <div class="card"> -->
+                        <!-- <div class="card-body" height="50px" width="150px">
+                            <h3 class="card-title">client {{client.clientId}}'s question</h3>
+                            <h5>Que:</h5>
+                            <p class="card-text" style="height: auto">{{discussion.question}}</p>
+                            <h5>Ans:</h5>
+                            <p class="card-text" style="height: auto">{{discussion.answer}}</p> -->
+                        <div class="xyz">
+                        <hr style="size: 5pixels;">
+                        <p><b>Question: </b>{{discussion.question}}</p><br/>
+                        <p><b>Reply: </b> {{discussion.answer}} </p>
+                        </div>
+                       <!-- <form (ngSubmit)="viewReplies(que.questionId)">
+                            <button class="btn" style="bottom: 0px;">View Replies...</button>
+                        </form> -->
+                    <!-- </div> -->
+                        <!-- </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+          
+    </div>
+</body>
+
+</html>

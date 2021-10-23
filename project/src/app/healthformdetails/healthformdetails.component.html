@@ -1,0 +1,145 @@
+
+<!--<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>-->
+
+<!--<body *ngIf=client>
+<h3>Hey {{client.clientName}} Your Health form... </h3>
+<div class = "card">
+    <h1>MY HEALTH FORM</h1><br>
+<div>
+
+</div>    
+<table style="width: 100%;">
+<tr>
+    <th>Age</th>
+    <td>{{healthForm.age}}</td>
+  </tr>
+  <tr>
+    <th>Weight</th>
+    <td>{{healthForm.weight}}</td>
+  </tr>
+  <tr>
+    <th>Height</th>
+    <td>{{healthForm.height}}</td>
+  </tr>
+  <tr>
+    <th>Height</th>
+    <td>{{healthForm.bmi |bmi: healthForm.weight:healthForm.height}}</td>
+  </tr>
+  <tr>
+    <th>Blood Group</th>
+    <td>{{healthForm.bloodGrp}}</td>
+  </tr>
+  <tr>
+    <th>Medical Conditions</th>
+    <td>{{healthForm.medicalCondition}}</td>
+  </tr>
+  <tr>
+    <th>Physical Activity</th>
+    <td>{{healthForm.dailyActivity}}</td>
+  </tr>
+  <br><br>
+</table>
+  <p><button (click)="showEditPopup(healthForm)">Edit healthForm</button></p>
+  <tr>
+ <th>Edit Profile</th>
+    <td><button (click)="showEditPopup(client)" class="glyphicon glyphicon-pencil"></button></td>
+  </tr>
+</div>
+</body>-->
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  
+</head>
+<div *ngIf=healthForm></div>
+<div class="container">
+    <div class="modal fade" id="healthFormModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter age: <input type="number" name="age" [(ngModel)]="editObject.age"
+                            class="form-control"><br />
+                        Enter weight: <input type="number" name="weight" [(ngModel)]="editObject.weight"
+                            class="form-control"><br />
+                        Enter height: <input type="number" name="height" [(ngModel)]="editObject.height"
+                            class="form-control"><br />
+                        Enter Blood Group: <input type="text" name="bloodGrp" [(ngModel)]="editObject.bloodGrp"
+                            class="form-control"><br />
+                        Enter MedicalCondition: <input type="text" name="medicalCondition" [(ngModel)]="editObject.medicalCondition"
+                            class="form-control"><br />
+                        Enter PhysicalActivity: <input type="text" name="dailyActivity" [(ngModel)]="editObject.dailyActivity"
+                            class="form-control"><br />
+                        Enter Gender: <input type="text" name="gender" [(ngModel)]="editObject.gender"
+                            class="form-control"><br />    
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateHealthForm()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!---<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <h3>Hey {{client.clientName}} Your Health form... </h3>
+  </head>-->
+  <body>
+    <h3>Hey {{client.clientName}} Your Health form... </h3>
+    <div class="regform"><h1>Health Form Details<span class="close" data-dismiss="modal">&times;</span></h1>
+    </div>
+    <div class="main">
+
+<table style="width:100%" class="center">
+  <tr>
+    <th>Age</th>
+    <td>{{healthForm.age}}</td>
+  </tr>
+  <tr>
+    <th>Weight</th>
+    <td>{{healthForm.weight}}</td>
+  </tr>
+  <tr>
+    <th>Height</th>
+    <td>{{healthForm.height}}</td>
+  </tr>
+  <tr>
+    <th>Blood Group</th>
+    <td>{{healthForm.bloodGrp}}</td>
+  </tr>
+  <tr>
+    <th>Medical Conditions</th>
+    <td>{{healthForm.medicalCondition}}</td>
+  </tr>
+  <tr>
+    <th>Physical Activity</th>
+    <td>{{healthForm.dailyActivity}}</td>
+  </tr>
+  <tr>
+    <th>Gender</th>
+    <td>{{healthForm.gender}}</td>
+  </tr>
+  <tr>
+    <th>BMI</th>
+    <td>{{healthForm.bmi}}</td>
+  </tr>
+  <tr>
+    <th><button (click)="showEditPopup(healthForm)">Edit healthForm</button></th>
+    <td><button (click)="yourdietredirect()" type="submit">OK</button></td>
+  </tr>
+<!--<button (click)="showEditPopup(healthForm)">Edit healthForm</button>-->
+</table>
+
+</div>
+  </body>

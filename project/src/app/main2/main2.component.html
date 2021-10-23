@@ -1,0 +1,271 @@
+
+    <div class="modal fade" id="reviewModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                 <!-- <div class="modal-header">
+                    <h4 class="modal-title " style="text-align: center;">RATE US</h4>
+                </div> -->
+                <div class="modal-body">
+                    <h2 style="text-align: center;">RATE US</h2>
+                         <div class="container3">
+                            <!-- <p class="head1">Rate us</p> -->
+                            <a *ngFor="let item of starList; let i=index " (click)="setStar(i)" data-dismiss="modal">  
+                                <i class="fa fa-star fa-10x" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>   
+                               </a> 
+                               <button id="b2" (click)="mainRedirect()" data-dismiss="modal">Ask Me Later</button>
+                            <!-- <form class="form-group" #reviewForm="ngForm">
+                            <div class="rating">
+                                <input type="radio" name="rating" id="star1" value="1" [(ngModel)]='reviews.rating'>
+                                <label for="star1"></label>
+                                <input type="radio" name="rating" id="star2" value="2" [(ngModel)]='reviews.rating'>
+                                <label for="star2"></label>
+                                <input type="radio" name="rating" id="star3" value="3"[(ngModel)]='reviews.rating'>
+                                <label for="star3"></label>
+                                <input type="radio" name="rating" id="star4" value="4" [(ngModel)]='reviews.rating'>
+                                <label for="star4"></label>
+                                <input type="radio" name="rating" id="star5" value="5" [(ngModel)]='reviews.rating'>
+                                <label for="star5"></label>
+                            </div>
+                            <button id="b1" (click)="submitReview(reviewForm.value)" data-dismiss="modal">Submit</button>
+                            <button id="b2" (click)="mainRedirect()" data-dismiss="modal">Ask Me Later</button>
+                        </form> -->
+                         </div>
+                        </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateClient()" data-dismiss="modal">Update</button>
+                </div> -->
+            </div>
+        </div>
+    
+
+    <head>
+        <title>Mainpage</title>
+        <meta charset="utf-8">
+    <title>Pure CSS Star Rating</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    </head>
+    <!-- <body>
+        <nav id="navbar">
+             <a href="#" class="brand">Healthy<span>Byte</span></a>
+            <ul>
+                
+                
+                <li><a class="nav-link" routerLink="/main2">Home</a></li>
+                <li><a href="#section2">About</a></li>
+                <li><a class="nav-link" routerLink="/myprofile">My Profile</a></li>
+                <li><a class="nav-link" routerLink="/blog">Blog</a></li>
+                <li><a class="nav-link" routerLink="/discussion">Discussion Forum</a></li>
+                <li><a (click)="showReviewPopup()">LogOut</a></li>
+                
+
+                </ul>
+        </nav>
+        <div id="section1">
+             <h3>This is homepage</h3> 
+            <div class="slider">
+                <div class="sliderchild">
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+
+                </div>
+            </div>
+        </div>
+       <div id="section2">
+            <h3>About</h3> 
+           <h4>This website guides you to be healthy and live your life to the fullest</h4>
+           <div class ="container">
+            <div class="box">
+                <h5>Take some time to make your soul happy</h5>
+                <img [src]="imageUrl2" style="width: 150px;height: 150px;margin-left: 60px;margin-right: 10px;margin-top: 50px;">
+                <button (click)="yogaRedirect()"type ="submit" name ="" value="">Yoga</button> 
+                    
+            </div> 
+              <div class="box">
+                <h5>You are what you eat</h5><br>
+                <img [src]="imageUrl" style="width: 150px;height: 150px;margin-left: 60px;margin-right: 10px;margin-top: 50px;">
+                <button (click)="healthFormredirect()" type="submit" name ="" value="">Diet</button> 
+            </div> 
+            <div class="box">
+                <h5>Get up and make your body move</h5>
+                <img [src]="imageUrl3" style="width: 150px;height: 150px;margin-left: 60px;margin-right: 10px;margin-top: 50px;">
+                <button (click)="fitnessRedirect()"type ="submit" name ="" value="">Fitness</button> 
+            </div> 
+           </div>
+        </div>
+        <div id ="section3">
+            <h1></h1>
+        </div>
+            <script>
+                var prevScrollpos = window.pageYOffset;
+                window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                  if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                  } else {
+                    document.getElementById("navbar").style.top = "-20px";
+                  }
+                  prevScrollpos = currentScrollPos;
+                }
+                </script>
+                
+            
+
+        
+    
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WebSite Development</title>
+</head>
+<body>
+    <div class="header row" style="height:80px;background-color:black;">
+        <div class="col-md-2">
+              <img [src] = "logo">
+        </div>
+        <div class="col-md-2 seg1"></div>
+           <div class="col-md-1 seg1">
+            <a href="#">Home</a>
+           </div>
+           <div class="col-md-1 seg1">
+            <a href="#about">About</a>
+        </div>
+        <div class="col-md-1 seg1">
+            <a href="#services">Services</a>
+        </div> 
+        <div class="col-md-1 seg1">
+            <a href="#contactus">Contact</a>
+        </div>
+        <div class="col-md-1 seg1">
+            <a class="nav-link" routerLink="/blog">Blog</a>
+        </div>
+        <div class="col-md-1 seg1">
+            <a class="nav-link" routerLink="/discussion">Discussion</a>
+        </div>
+        <div class="col-md-1 seg1">
+            <a class="nav-link" routerLink="/myprofile">My Profile</a>
+        </div>
+        <div class="col-md-1 seg1">
+            <a (click)="showReviewPopup()">Log Out</a>
+        </div>
+     
+     
+        
+     </div>
+<!-- <div class="main_container" id="home"> -->
+    <!-- <div class="row">
+    <nav class="navbar">
+        <div class="logo">
+            <img [src]="logo">
+             <h3>Healthy<span>Byte</span></h3> 
+        </div>
+        <div class="navbar_items">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#contactus">contact</a></li>
+                <li><a href="#ourteam">our team</a></li>
+            </ul>
+        </div>
+    </nav>
+</div> -->
+    <div class="main_container" id="home">
+
+    <div class="banner_image">
+        <div class="banner_content">
+            <h1>Weight loss begins with you <br> and ends with HealthyByte.<br><br> 
+                <span>Get started on your journey <br>to lose your weight for good.</span></h1><br>
+        </div>
+        <!-- <div>
+            <li><a href="#ourteam">Get Started</a></li>
+        </div>   -->
+    </div>
+
+    <div class="about" id="about">
+        <h1 class="title">About Us</h1>
+        <p>We at HealthyByte believe in healthy practices and encourage our users not to follow crash, starvation diets, and instead opt for healthy weight loss, weight gain and muscle building. Once a user goes Premium, our dieticians understand the lifestyle challenges, food preferences, allergies, and other key details to create a personalized diet plan that fits in their lifestyle.</p>
+        <div class="btn"><a href="#">Learn More</a></div>
+    </div>
+
+    <div class="services" id="services">
+        <h1 class="title">our Services</h1>
+        <p>Our weight loss methods are backed by science and facilitate healthy living by personalized diet plans and exercise routines that are designed exclusively for you and fit in your daily lifestyle. We make minor lifestyle modifications, help create healthy habits to help you achieve much more than just weight loss.</p>
+        <div class="diff_services">
+            <div class="diff_services_item1">
+                <a (click)="yogaRedirect()"> <img [src]="imageUrl2" alt="Trulli" width="300" height="300"></a>
+         <h3 class="sub_title">YOGA</h3>
+        <div class="image1"></div>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+        </div>
+            <div class="diff_services_item2">
+                <a (click)="healthFormredirect()"><img [src]="imageUrl" width="350" height="310"></a>
+        <h3 class="sub_title">DIET</h3>
+        <div class="image2"></div>
+               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+            </div>
+            <div class="diff_services_item3">
+                <a (click)="fitnessRedirect()"><img [src]="imageUrl3" width="330" height="320"></a>
+        <h3 class="sub_title">FITNESS</h3>
+        <div class="image3"></div>
+               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+            </div>
+        </div>
+    </div>
+    <div class="contactus" id="contactus">
+        <h1 class="title">contact us</h1>
+        <div class="form_wrapper">
+            <div class="form_input">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="form_input">
+                <input type="text" placeholder="Subject">
+            </div>
+            <div class="form_input">
+                <textarea placeholder="Message"></textarea>
+            </div>
+            <div class="btn">
+                <a href="#">Submit</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="ourteam" id="ourteam">
+        <h1 class="title">our team</h1>
+        <div class="ourteam_wrapper">
+            <div class="team-1 team">
+                <div class="team_members" data-name="nathan john"></div>
+                <div class="team_members" data-name="Alyssa Healy"></div>
+                <div class="team_members" data-name="Alec Stewart"></div>
+            </div>
+            <div class="team-2 team">
+                <div class="team_members" data-name="Michael Rippon"></div>
+                <div class="team_members" data-name="Meg Lanning"></div>
+                <div class="team_members" data-name="Sophie Devine"></div>
+            </div>
+    </div>
+    </div> -->
+  
+
+
+    <div class="footer">
+        <a href="#"></a>
+    </div>
+
+
+    <div class="arrow">
+        <a href="#home"><!--<img src="images/arrow.png" alt="up_arrow">--></a>
+    </div>
+</div>

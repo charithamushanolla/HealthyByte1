@@ -1,0 +1,61 @@
+
+<head>
+    <meta charset="ISO-8859-I">
+    <title>Html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <!-- <div id="header">
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Healthy<span>Byte</span></h3>
+        </div>
+        <div class="right_area">
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+    </div> -->
+    <div id="navigation">
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <img [src]="logo">
+        </div>
+        <a class="nav-link" routerLink="/main2"><i class="fas fa-home"></i><span>Home<br /></span></a>
+        <a class="nav-link" routerLink="/yoga"><i class="fa fa-heartbeat"></i><span>Yoga<br /></span></a>
+        <a class="nav-link" routerLink="/yourdiet"><i class="fa fa-cutlery"></i><span>Diet<br /></span></a>
+        <a class="nav-link" routerLink="/fitness"><i class="fas fa-running"></i><span>Fitness</span></a>
+        <a class="nav-link" routerLink="/blog"><i class="fab fa-blogger-b"></i><span>Blog</span></a>
+        <a class="nav-link" routerLink="/discussion"><i class="fa fa-comments" aria-hidden="true"></i><span>Discussion</span></a>
+    </div>
+    <div id="section">
+        <div class="blog">
+            <h1>HEY {{client.clientName}}</h1>
+            <!-- <h1>WELCOME TO OUR BLOG!!!!</h1> -->
+            <h1>Post Your Question</h1>
+        </div> 
+        <div class="container">
+            <form class="form-group" #discussionform="ngForm" (ngSubmit)="submitQuestion(discussionform.value)" novalidate>
+                <!-- <input type="text" style="width: 250px;height: 200px;margin-left: 10px;margin-right: 10px;" name="article"  ngModel #article= 'ngModel'> -->
+                <div class="row">
+                    <div class="col-25">
+                      <label for="fname">Your Question:</label>
+                    </div>
+                    <div class="col-751">
+                      <textarea rows="5" cols="90" id="fname" name=question [(ngModel)]="discussionForm.question"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm">Post</button>
+            </form>
+            
+        </div>
+        
+          
+    </div>
+</body>
+

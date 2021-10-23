@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<div *ngIf=client></div>
+<div class="container">
+    <div class="modal fade" id="clientModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Name: <input type="text" name="clientName" [(ngModel)]="editObject.clientName"
+                            class="form-control"><br />
+                        Enter dob: <input type="date" name="dob" [(ngModel)]="editObject.dob"
+                            class="form-control"><br />
+                        Enter phone Number: <input type="text" name="phoneNo" [(ngModel)]="editObject.phoneNo"
+                            class="form-control"><br />
+                        Enter Email Id: <input type="text" name="emailId" [(ngModel)]="editObject.emailId"
+                            class="form-control"><br />
+                        Enter loginId: <input type="text" name="mobile" [(ngModel)]="editObject.loginId"
+                            class="form-control"><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateClient()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <body>
+        <div class="profile">
+    <div class = "card">
+        <h1>MY PROFILE</h1><br>
+    <div>
+
+    </div>    
+
+    <table style="width: 100%;">
+    <tr>
+        <th>Name</th>
+        <td>{{client.clientName}}</td>
+      </tr>
+      <tr>
+        <th>Date Of Birth</th>
+        <td>{{client.dob |date: 'dd-MMMM-yyyy'}}</td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td>{{client.phoneNo}}</td>
+      </tr>
+      <tr>
+        <th>Email Id</th>
+        <td>{{client.emailId}}</td>
+      </tr>
+      <tr>
+        <th>loginId</th>
+        <td>{{client.loginId}}</td>
+      </tr><br><br>
+    </table>
+      <p><button (click)="showEditPopup(client)">Edit Profile</button></p>
+      <!--<tr>
+     <th>Edit Profile</th>
+        <td><button (click)="showEditPopup(client)" class="glyphicon glyphicon-pencil"></button></td>
+      </tr>-->
+    
+    </div>
+        </div>
+</body>
